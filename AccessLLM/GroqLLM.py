@@ -1,5 +1,8 @@
 import os
-os.environ["GROQ_API_KEY"] = "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"
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from groq import Groq
 

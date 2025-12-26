@@ -1,5 +1,8 @@
 import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCSgV0Iz-YDeu_317J7QIRvYXrw-p-lslQ"
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from google import genai;
 client = genai.Client()

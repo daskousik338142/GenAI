@@ -1,8 +1,10 @@
 import os
+from dotenv import load_dotenv
 from llama_index.llms.openai import OpenAI
 from llama_index.core.llms import ChatMessage
 
-os.environ["OPENAI_API_KEY"] = "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"
+# Load environment variables from .env file
+load_dotenv()
 
 llm = OpenAI(
     model="gpt-3.5-turbo", 
@@ -21,8 +23,6 @@ print("="*100)
 
 from llama_index.llms.google_genai import GoogleGenAI
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCSgV0Iz-YDeu_317J7QIRvYXrw-p-lslQ"
-
 llm = GoogleGenAI(
     model="gemini-2.5-flash", 
     temperature=0)
@@ -34,8 +34,6 @@ print(response.text)
 print("="*100)
 
 from llama_index.llms.groq import Groq
-
-os.environ["GROQ_API_KEY"] = "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"
 
 llm = Groq(
     model="llama-3.3-70b-versatile", 

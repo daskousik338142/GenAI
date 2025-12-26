@@ -1,5 +1,8 @@
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from openai import OpenAI
 

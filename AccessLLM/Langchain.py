@@ -1,7 +1,9 @@
 import os
+from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
-os.environ["OPENAI_API_KEY"] = "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"
+# Load environment variables from .env file
+load_dotenv()
 
 llm = ChatOpenAI(
     model="gpt-3.5-turbo", 
@@ -15,8 +17,6 @@ print("="*100)
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCSgV0Iz-YDeu_317J7QIRvYXrw-p-lslQ"
-
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash", 
     temperature=0)
@@ -28,8 +28,6 @@ print(response.content)
 print("="*100)
 
 from langchain_groq import ChatGroq
-
-os.environ["GROQ_API_KEY"] = "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"
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile", 
